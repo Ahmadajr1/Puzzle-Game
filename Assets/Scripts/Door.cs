@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
     private Animator _doorAnimator;
     private static readonly int open = Animator.StringToHash("open");
 
+
     private void Start()
     {
         _doorAnimator = transform.parent.GetComponent<Animator>();
@@ -14,7 +15,6 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-            _doorAnimator.SetTrigger(open);
+        _doorAnimator.SetTrigger(open);
     }
 }
